@@ -5,10 +5,7 @@ import com.ren.springbill.entities.Provider;
 import org.springframework.stereotype.Repository;
 import org.springframework.util.StringUtils;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 @Repository
 public class ProviderDao {
@@ -32,6 +29,7 @@ public class ProviderDao {
         if(provider.getPid() == null){
             provider.setPid(initId++);
         }
+        provider.setCreateDate(new Date());
         providerMap.put(provider.getPid(), provider);
     }
 

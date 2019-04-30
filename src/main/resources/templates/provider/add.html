@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head lang="en">
     <meta charset="UTF-8">
     <title>梦学谷账单管理系统</title>
@@ -41,7 +41,7 @@
             <span>供应商管理页面 >> 供应商添加页面</span>
         </div>
         <div class="providerAdd">
-            <form action="#">
+            <form id="addForm" action="#" th:action="@{provider}" th:method="post">
                 <!--div的class 为error是验证错误，ok是验证成功-->
                 <div class="">
                     <label for="providerName">供应商名称：</label>
@@ -76,7 +76,7 @@
                 <div class="providerAddBtn">
                     <!--<a href="#">保存</a>-->
                     <!--<a href="providerList.html">返回</a>-->
-                    <input type="button" value="保存" onclick="history.back(-1)"/>
+                    <input type="button" value="保存" onclick="$('#addForm').submit()"/>
                     <input type="button" value="返回" onclick="history.back(-1)"/>
                 </div>
             </form>
